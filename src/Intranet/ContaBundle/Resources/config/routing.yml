@@ -1,0 +1,3 @@
+intranet_conta_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IntranetContaBundle:Default:index }

@@ -1,0 +1,3 @@
+intranet_os_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IntranetOsBundle:Default:index }

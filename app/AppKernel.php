@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             
+            # Base para o Sonata Dashboard
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
@@ -25,14 +26,19 @@ class AppKernel extends Kernel
             new Sonata\SeoBundle\SonataSeoBundle(),
             #new JMS\DiExtraBundle\JMSDiExtraBundle($kernel),
             
+            # Base para o Sonata User
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\DatagridBundle\SonataDatagridBundle(),
             
+            # Chamada do Dashboard
             new Sonata\AdminBundle\SonataAdminBundle(),
             
+            # Arquivos da Intranet
+            new Intranet\OsBundle\IntranetOsBundle(),
+            new Intranet\ContaBundle\IntranetContaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

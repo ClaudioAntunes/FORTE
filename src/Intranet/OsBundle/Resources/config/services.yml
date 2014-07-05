@@ -1,0 +1,7 @@
+parameters:
+#    intranet_os.example.class: Intranet\Bundle\OsBundle\Example
+
+services:
+#    intranet_os.example:
+#        class: %intranet_os.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

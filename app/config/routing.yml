@@ -1,3 +1,11 @@
+intranet_conta:
+    resource: "@IntranetContaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+intranet_os:
+    resource: "@IntranetOsBundle/Resources/config/routing.yml"
+    prefix:   /
+
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
