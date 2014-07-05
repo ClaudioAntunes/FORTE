@@ -99,5 +99,34 @@ sonata_block:
         sonata.admin.block.admin_list:
             contexts: [admin]
         #Outros blocos
-        sonata.user.block.menu:
-        sonata.user.block.account:
+        sonata.user.block.menu:    # used to display the menu in profile pages
+        sonata.user.block.account: # used to display menu option (login option)
+        sonata.block.service.text:
+        sonata.block.service.rss:
+#    profiler:
+#        enabled:        %kernel.debug%
+#        template:       SonataBlockBundle:Profiler:block.html.twig
+            
+sonata_admin:
+    dashboard:
+        blocks:
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+            -
+                position: right
+                type: sonata.block.service.text
+                settings:
+                    content: >
+                        <h2>Bem Vindo à Intranet FORTE Soluções em TI</h2>
+                        <p>This is a <code>sonata.block.service.text</code> from the Block
+                        Bundle, you can create and add new block in these area by configuring
+                        the <code>sonata_admin</code> section.</p> <br /> 
+                        #For instance, here a RSS feed parser (<code>sonata.block.service.rss</code>):
+            -
+                position: right
+                type: sonata.block.service.rss
+                settings:
+                    title: Feed do Portal G1
+                    #url: http://sonata-project.org/blog/archive.rss
+                    url: http://g1.globo.com/dynamo/rss2.xml
