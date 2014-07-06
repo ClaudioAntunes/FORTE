@@ -1,0 +1,12 @@
+# Intranet/ContaBundle/Resources/config/admin.yml
+services:
+    sonata.admin.contrato:
+        class: Intranet\ServicoBundle\Admin\ContratoAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Vendas/Serviço", label: "Contratos" }
+        arguments:
+            - ~
+            - Intranet\ServicoBundle\Entity\Contrato
+            - ~
+        calls:
+            - [ setTranslationDomain, [IntranetServicoBundle]]

@@ -1,0 +1,3 @@
+intranet_servico_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IntranetServicoBundle:Default:index }

@@ -116,6 +116,13 @@ sonata_admin:
         blocks:
             -
                 position: left
+                type: sonata.block.service.text
+                settings:
+                    content: >
+                        <h3>Blocos do painel principal</h3>
+                        <br />
+            -
+                position: left
                 type: sonata.admin.block.admin_list
             -
                 position: right
@@ -123,10 +130,19 @@ sonata_admin:
                 settings:
                     content: >
                         <h2>Bem Vindo à Intranet FORTE Soluções em TI</h2>
-                        <p>This is a <code>sonata.block.service.text</code> from the Block
-                        Bundle, you can create and add new block in these area by configuring
-                        the <code>sonata_admin</code> section.</p> <br /> 
+                        <p>Este <code>sonata.block.service.text</code> bloco é 
+                        criado editando a area  <code>sonata_admin</code> 
+                        do painel de administração.</p> <br /> 
                         #For instance, here a RSS feed parser (<code>sonata.block.service.rss</code>):
+            -
+                position: right
+                type: sonata.block.service.text
+                settings:
+                    content: >
+                        <h3>Treinamento FORTE</h3>
+                        <p>Este bloco <code>sonata.block.service.text</code>é um teste de 
+                        administração<code>sonata_admin</code> de cursos.</p> <br /> 
+                        #For instance, here a RSS feed parser (<code>sonata.block.service.rss</code>):                            
             -
                 position: right
                 type: sonata.block.service.rss

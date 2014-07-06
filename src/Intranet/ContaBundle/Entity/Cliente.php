@@ -85,6 +85,14 @@ class Cliente
     private $site;
 
 
+    public function __toString() {
+        return $this->getNome();
+    }
+
+
+    
+    
+    
     /**
      * Get id
      *

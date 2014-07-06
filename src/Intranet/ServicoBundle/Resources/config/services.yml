@@ -1,0 +1,7 @@
+parameters:
+#    intranet_servico.example.class: Intranet\ServicoBundle\Example
+
+services:
+#    intranet_servico.example:
+#        class: %intranet_servico.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

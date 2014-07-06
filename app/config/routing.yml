@@ -1,3 +1,7 @@
+intranet_servico:
+    resource: "@IntranetServicoBundle/Resources/config/routing.yml"
+    prefix:   /
+
 intranet_conta:
     resource: "@IntranetContaBundle/Resources/config/routing.yml"
     prefix:   /

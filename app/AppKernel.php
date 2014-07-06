@@ -39,6 +39,7 @@ class AppKernel extends Kernel
             # Arquivos da Intranet
             new Intranet\OsBundle\IntranetOsBundle(),
             new Intranet\ContaBundle\IntranetContaBundle(),
+            new Intranet\ServicoBundle\IntranetServicoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
