@@ -1,0 +1,24 @@
+# Intranet/ContaBundle/Resources/config/admin.yml
+services:
+    sonata.admin.tecnico:
+        class: Intranet\ContaBundle\Admin\TecnicoAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Configuração", label: "Técnico" }
+        arguments:
+            - ~
+            - Intranet\ContaBundle\Entity\Tecnico
+            - ~
+        calls:
+            - [ setTranslationDomain, [IntranetContaBundle]]
+            
+            
+    sonata.admin.cliente:
+        class: Intranet\ContaBundle\Admin\ClienteAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Configuração", label: "Cliente" }
+        arguments:
+            - ~
+            - Intranet\ContaBundle\Entity\Cliente
+            - ~
+        calls:
+            - [ setTranslationDomain, [IntranetContaBundle]]

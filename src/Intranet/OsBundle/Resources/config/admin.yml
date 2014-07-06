@@ -10,3 +10,15 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [IntranetOsBundle]]
+            
+      
+    sonata.admin.reparo:
+        class: Intranet\OsBundle\Admin\ReparoAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Configuração", label: "Reparo" }
+        arguments:
+            - ~
+            - Intranet\OsBundle\Entity\Reparo
+            - ~
+        calls:
+            - [ setTranslationDomain, [IntranetOsBundle]]

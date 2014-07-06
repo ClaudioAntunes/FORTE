@@ -134,3 +134,4 @@ sonata_admin:
                     title: Feed do Portal G1
                     #url: http://sonata-project.org/blog/archive.rss
                     url: http://g1.globo.com/dynamo/rss2.xml
+                    #url: https://github.com/ClaudioAntunes.atom
