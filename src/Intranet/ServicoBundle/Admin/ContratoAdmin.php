@@ -22,6 +22,7 @@ class ContratoAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+
             ->add('cliente', 'entity', array('class' => 'Intranet\ContaBundle\Entity\Cliente'))
             ->add('responsavel')#, 'entity', array('class' => 'Acme\DemoBundle\Entity\User'))
             ->add('endereco') //if no type is specified, SonataAdminBundle tries to guess it
@@ -35,7 +36,7 @@ class ContratoAdmin extends Admin
             ->add('notes')#, 'text', array('label' => 'Site'))
             ->add('dataini')#, 'text', array('label' => 'Site'))
             ->add('datafim')#, 'text', array('label' => 'Site'))
-            ->add('valortotal')#, 'text', array('label' => 'Site'))
+            ->add('valortotal')#, 'currency', array('currency' => $this->currencyDetector->getCurrency()->getLabel()))
             ->add('vencimento')#, 'text', array('label' => 'Site'))
                 
                 
@@ -57,7 +58,8 @@ class ContratoAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('cliente')#, 'text', array('label' => 'Nome'))
+            ->addIdentifier('cliente')                
+            #->add('cliente')#, 'text', array('label' => 'Nome'))
             ->add('tel1')#, 'text', array('label' => 'Bairro'))
             ->add('tipo')#, 'text', array('label' => 'Site'))
             ->add('pcs')#, 'text', array('label' => 'Site'))
@@ -65,6 +67,12 @@ class ContratoAdmin extends Admin
             ->add('dataini')#, 'text', array('label' => 'Site'))
             ->add('valortotal')#, 'text', array('label' => 'Site'))
             ->add('vencimento')#, 'text', array('label' => 'Site'))
+            ->add('_action', 'actions', array(
+            'actions' => array(
+                'show' => array(),
+                'edit' => array(),
+                'delete' => array(),
+            )))
 
         ;
     }

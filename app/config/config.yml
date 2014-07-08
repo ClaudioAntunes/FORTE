@@ -87,6 +87,15 @@ fos_user:
         
     service:
         user_manager: sonata.user.orm.user_manager
+        
+    profile:
+        # Authentication Form
+        form:
+            type:               fos_user_profile
+            handler:            fos_user.profile.form.handler.default
+            name:               fos_user_profile_form
+            validation_groups:  [Authentication] # Please note : this is not the default value
+
     
     
     
@@ -123,6 +132,7 @@ sonata_admin:
                         <br />
             -
                 position: left
+                class: col-md-6
                 type: sonata.admin.block.admin_list
             -
                 position: right
@@ -145,9 +155,17 @@ sonata_admin:
                         #For instance, here a RSS feed parser (<code>sonata.block.service.rss</code>):                            
             -
                 position: right
+                class: col-md-6
                 type: sonata.block.service.rss
                 settings:
                     title: Feed do Portal G1
                     #url: http://sonata-project.org/blog/archive.rss
                     url: http://g1.globo.com/dynamo/rss2.xml
                     #url: https://github.com/ClaudioAntunes.atom
+             
+            - { position: left, type: sonata.block.service.text, settings: { content: "<h2>Welcome!</h2> You can customize this dashboard by editing the sonata_admin.yml file. The current dashboard presents the recent items from the NewsBundle and a timeline with the latest action"} }
+            #- { position: left, type: sonata.admin.block.admin_list }
+             #- { position: center, type: sonata.timeline.block.timeline, settings: { context: SONATA_ADMIN, max_per_page: 25 }}
+             #- { position: right, type: sonata.news.block.recent_posts, settings: { title: Recent Posts, number: 7, mode: admin }}
+             #- { position: right, type: sonata.news.block.recent_comments, settings: { title: Recent Comments, number: 7, mode: admin }}
+            - { position: center, type: sonata.block.service.rss, settings: { title: Sonata Project's Feeds, url: http://sonata-project.org/blog/archive.rss }}
